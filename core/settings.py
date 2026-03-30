@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
@@ -143,7 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "https://zaarava-frontend.vercel.app",
 ]
-import os
+
 
 # Base url to serve media files
 import os
