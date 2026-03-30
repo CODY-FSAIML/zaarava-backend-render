@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-6a7edksz!)w)iwsub0)5$h9*c2jw)ss4#n@-jonry-sj+@-2%m
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Render sets an environment variable called RENDER. If it's there, turn off Debug mode.
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = []
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
