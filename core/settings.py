@@ -161,8 +161,11 @@ STORAGES = {
 }
 
 # This tells Cloudinary to look for the key in Render's environment
+# Tells Cloudinary to use your 3 specific keys from Render
 CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
 
 # Path where media is stored
