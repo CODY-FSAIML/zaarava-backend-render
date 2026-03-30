@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+venv/
+env/
+.env
+
+# Database
+db.sqlite3
+
+# Media files (User uploaded images)
+media/
