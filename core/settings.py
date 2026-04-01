@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-6a7edksz!)w)iwsub0)5$h9*c2jw)ss4#n@-jonry-sj+@-2%m
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Render sets an environment variable called RENDER. If it's there, turn off Debug mode.
-DEBUG = True
+DEBUG = not os.environ.get('RENDER')
 
 ALLOWED_HOSTS = []
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -38,6 +38,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -175,5 +176,34 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 if not STRIPE_SECRET_KEY:
     raise RuntimeError('STRIPE_SECRET_KEY environment variable is not set')
+# settings.py
+
+JAZZMIN_SETTINGS = {
+    # Title on the login screen
+    "site_title": "Zaarava Admin",
+    
+    # Title on the brand text (top left of dashboard)
+    "site_header": "Zaarava",
+    
+    # Title on the brand text (top left of dashboard)
+    "site_brand": "Zaarava Management",
+    
+    # Welcome text on the login screen
+    "welcome_sign": "Welcome to the Zaarava Dashboard",
+    
+    # Copyright on the footer
+    "copyright": "Zaarava Ltd",
+    
+    # Hide these apps to keep the client's view clean and simple
+    "hide_apps": ["auth", "contenttypes", "sessions"],
+    
+    # Make the UI look more modern
+    "show_ui_builder": False,
+}
+
+# Optional: Add a UI tweak to make it look even cleaner
+JAZZMIN_UI_TWEAKS = {
+    "theme": "flatly", # A very clean, modern, professional theme
+}
 
 
